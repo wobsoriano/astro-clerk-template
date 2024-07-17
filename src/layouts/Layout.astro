@@ -28,16 +28,17 @@ const { title } = Astro.props;
     >
       <a href="/" class="flex items-center h-20 gap-2 sm:gap-4">
         <!-- Logo -->
+        logo
       </a>
       <div class="grow"></div>
       <SignedIn>
         <div class="hidden sm:block">
-          <OrganizationSwitcher after-create-organization-url="/dashboard" />
+          <OrganizationSwitcher afterCreateOrganizationUrl="/dashboard" />
         </div>
         <div class="block sm:hidden">
           <OrganizationSwitcher
-            after-create-organization-url="/dashboard"
-            :appearance={{
+            afterCreateOrganizationUrl="/dashboard"
+            appearance={{
               elements: {
                 organizationSwitcherTriggerIcon: "hidden",
                 organizationPreviewTextContainer: "hidden",
@@ -46,7 +47,7 @@ const { title } = Astro.props;
             }}
           />
         </div>
-        <UserButton after-sign-out-url="/" />
+        <UserButton afterSignOutUrl="/" />
       </SignedIn>
     </header>
     <main class="grow">

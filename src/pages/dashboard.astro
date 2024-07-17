@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Column from "../components/Column.astro";
 import SessionDetails from "../components/SessionDetails.vue";
 import UserDetails from "../components/UserDetails";
+import OrganizationDetails from "../components/OrganizationDetails.svelte";
 
 const user = await Astro.locals.currentUser();
 ---
@@ -14,10 +15,13 @@ const user = await Astro.locals.currentUser();
     </h1>
     <div class="grid gap-4 mt-8 lg:grid-cols-3">
       <Column title="User">
-        <UserDetails client:only="react" />
+        <UserDetails client:load />
       </Column>
       <Column title="Session">
-        <SessionDetails client:only="vue" />
+        <SessionDetails client:load />
+      </Column>
+      <Column title="Organization">
+        <OrganizationDetails client:load />
       </Column>
       <!-- <UserDetails />
         <SessionDetails />
