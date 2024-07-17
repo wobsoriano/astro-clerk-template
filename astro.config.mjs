@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import vue from "@astrojs/vue";
-import svelte from "@astrojs/svelte";
+// import svelte from "@astrojs/svelte";
 import vercelServerless from "@astrojs/vercel/serverless";
 import clerk from "@clerk/astro";
 
@@ -16,7 +16,7 @@ export default defineConfig({
     }),
     react(),
     vue(),
-    svelte(),
+    // svelte(),
     tailwind(),
   ],
   output: "server",
