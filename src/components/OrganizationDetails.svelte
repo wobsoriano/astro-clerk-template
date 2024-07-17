@@ -3,9 +3,9 @@ import { $organizationStore as organizationStore } from '@clerk/astro/client';
 </script>
 
 {#if $organizationStore === undefined}
-    <div class="text-gray-700 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-      Loading organization data...
-    </div>
+<div class="text-gray-700 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+    Loading organization data...
+</div>
 {:else if $organizationStore === null}
 <div class="text-gray-700 px-8 pb-5 text-sm">
   You are currently logged in to your personal workspace.
@@ -21,7 +21,6 @@ import { $organizationStore as organizationStore } from '@clerk/astro/client';
       </dt>
       <dd class="mt-1 text-sm text-gray-600 sm:mt-0 sm:col-span-2 flex gap-2">
         { $organizationStore.id }
-        <!-- <CopyButton :text="organization.id" /> -->
       </dd>
     </div>
     <div class="px-8 py-2">
@@ -53,13 +52,13 @@ import { $organizationStore as organizationStore } from '@clerk/astro/client';
         Image
       </dt>
       <dd class="mt-1 text-sm text-gray-600 sm:mt-0 sm:col-span-2">
-        <!-- <NuxtImg
+        <img
           class="rounded"
-          :src="organization.imageUrl"
-          :alt="`Logo for ${organization.name}`"
+          src={$organizationStore.imageUrl}
+          alt={`Logo for ${$organizationStore.name}`}
           width="48"
           height="48"
-        /> -->
+        />
       </dd>
     </div>
   </dl>

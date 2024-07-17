@@ -13,7 +13,6 @@ export default function SessionDetails() {
               <dt className="text-sm font-semibold">User ID</dt>
               <dd className="mt-1 text-sm text-gray-600 sm:mt-0 sm:col-span-2 flex gap-2">
                 {user.id}
-                {/* <CopyButton text={user.id} /> */}
               </dd>
             </div>
             {user.firstName && (

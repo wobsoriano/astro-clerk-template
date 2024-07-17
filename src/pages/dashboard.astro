@@ -6,9 +6,13 @@ import UserDetails from "../components/UserDetails";
 import OrganizationDetails from "../components/OrganizationDetails.svelte";
 
 const user = await Astro.locals.currentUser();
+
+if (!user) {
+  return Astro.locals.auth().redirectToSignIn();
+}
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Dashboard">
   <div class="px-8 py-12 sm:py-16 md:px-20">
     <h1 class="text-3xl font-semibold text-black">
       👋 Hi, {user?.firstName}

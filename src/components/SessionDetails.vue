@@ -12,7 +12,6 @@ const session = useStore($sessionStore);
         <dt class="text-sm font-semibold">Session ID</dt>
         <dd class="mt-1 text-sm text-gray-600 sm:mt-0 sm:col-span-2 flex gap-2">
           {{ session.id }}
-          <!-- <CopyButton :text="session.id" /> -->
         </dd>
       </div>
       <div class="px-8 py-2">
@@ -23,7 +22,15 @@ const session = useStore($sessionStore);
             class="text-xs bg-success-50 text-success-700 flex w-min gap-1 px-2 py-[1px] rounded-2xl font-medium"
           >
             <div class="m-auto">
-              <!-- <Icon name="Dot" /> -->
+              <svg
+                width="7"
+                height="6"
+                viewBox="0 0 7 6"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="3.3335" cy="3" r="3" fill="#12B76A" />
+              </svg>
             </div>
             Active
           </span>

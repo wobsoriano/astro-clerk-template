@@ -1,3 +1,3 @@
-import { clerkMiddleware } from "@clerk/astro/server";
+import { clerkMiddleware, createRouteMatcher } from "@clerk/astro/server";
 
 export const onRequest = clerkMiddleware();
