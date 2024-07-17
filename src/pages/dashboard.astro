@@ -1,1 +1,37 @@
-<div>dashboard</div>
+---
+import Layout from "../layouts/Layout.astro";
+import Column from "../components/Column.astro";
+import SessionDetails from "../components/SessionDetails.vue";
+import UserDetails from "../components/UserDetails";
+
+const user = await Astro.locals.currentUser();
+---
+
+<Layout title="Welcome to Astro.">
+  <div class="px-8 py-12 sm:py-16 md:px-20">
+    <h1 class="text-3xl font-semibold text-black">
+      👋 Hi, {user?.firstName}
+    </h1>
+    <div class="grid gap-4 mt-8 lg:grid-cols-3">
+      <Column title="User">
+        <UserDetails client:only="react" />
+      </Column>
+      <Column title="Session">
+        <SessionDetails client:only="vue" />
+      </Column>
+      <!-- <UserDetails />
+        <SessionDetails />
+        <OrgDetails /> -->
+    </div>
+    <h2 class="mt-16 mb-4 text-3xl font-semibold text-black">What's next?</h2>
+    Read the
+    <a
+      href
+      class="font-medium text-primary-600 hover:underline"
+      href="https://vue-clerk.com"
+      target="_blank"
+    >
+      Vue Clerk Docs -&gt;
+    </a>
+  </div>
+</Layout>
