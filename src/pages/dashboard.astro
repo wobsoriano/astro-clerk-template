@@ -1,9 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Column from "../components/Column.astro";
-import SessionDetails from "../components/SessionDetails.vue";
-import UserDetails from "../components/UserDetails";
-import OrganizationDetails from "../components/OrganizationDetails.svelte";
+// import CodeSwitcher from '../components/code-switcher.vue'
+import { UserDetails } from "../components/user-details";
+import LearnMore from "../components/learn-more.astro";
+import Footer from "../components/footer.astro";
+import ClerkLogo from "../components/clerk-logo.astro";
+import AstroLogo from "../components/astro-logo.astro";
+import { DASHBOARD_CARDS } from "../consts/cards";
+
+import { OrganizationSwitcher, UserButton } from "@clerk/astro/components";
 
 const user = await Astro.locals.currentUser();
 
@@ -13,30 +18,40 @@ if (!user) {
 ---
 
 <Layout title="Dashboard">
-  <div class="px-8 py-12 sm:py-16 md:px-20">
-    <h1 class="text-3xl font-semibold text-black">
-      👋 Hi, {user?.firstName}
-    </h1>
-    <div class="grid gap-4 mt-8 lg:grid-cols-3">
-      <Column title="User">
-        <UserDetails client:load />
-      </Column>
-      <Column title="Session">
-        <SessionDetails client:load />
-      </Column>
-      <Column title="Organization">
-        <OrganizationDetails client:load />
-      </Column>
+  <main class="max-w-[75rem] w-full mx-auto">
+    <div class="grid grid-cols-[1fr_20.5rem] gap-10 pb-10">
+      <div>
+        <header class="flex items-center justify-between w-full h-16 gap-4">
+          <div class="flex gap-4">
+            <ClerkLogo />
+            <div aria-hidden class="w-px h-6 bg-[#C7C7C8]"></div>
+            <AstroLogo />
+          </div>
+          <div class="flex items-center gap-2">
+            <OrganizationSwitcher
+              appearance={{
+                elements: {
+                  organizationPreviewAvatarBox: "size-6",
+                },
+              }}
+            />
+            <UserButton
+              afterSignOutUrl="/"
+              appearance={{
+                elements: {
+                  userButtonAvatarBox: "size-6",
+                },
+              }}
+            />
+          </div>
+        </header>
+        <UserDetails client:only="react" />
+      </div>
+      <div class="pt-[3.5rem]">
+        <!-- <CodeSwitcher /> -->
+      </div>
     </div>
-    <h2 class="mt-16 mb-4 text-3xl font-semibold text-black">What's next?</h2>
-    Read the
-    <a
-      href
-      class="font-medium text-primary-600 hover:underline"
-      href="https://clerk.com/docs/references/astro/overview"
-      target="_blank"
-    >
-      Clerk Astro Docs -&gt;
-    </a>
-  </div>
+  </main>
+  <LearnMore cards={DASHBOARD_CARDS} />
+  <Footer />
 </Layout>
