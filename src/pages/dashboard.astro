@@ -23,19 +23,16 @@ const user = await Astro.locals.currentUser();
       <Column title="Organization">
         <OrganizationDetails client:load />
       </Column>
-      <!-- <UserDetails />
-        <SessionDetails />
-        <OrgDetails /> -->
     </div>
     <h2 class="mt-16 mb-4 text-3xl font-semibold text-black">What's next?</h2>
     Read the
     <a
       href
       class="font-medium text-primary-600 hover:underline"
-      href="https://vue-clerk.com"
+      href="https://clerk.com/docs/references/astro/overview"
       target="_blank"
     >
-      Vue Clerk Docs -&gt;
+      Clerk Astro Docs -&gt;
     </a>
   </div>
 </Layout>
