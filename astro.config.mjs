@@ -10,7 +10,10 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [clerk(), react(), vue(), svelte(), tailwind()],
+  integrations: [clerk({
+    signInForceRedirectUrl: '/dashboard',
+    signUpForceRedirectUrl: '/dashboard',
+  }), react(), vue(), svelte(), tailwind()],
   output: "server",
   // adapter: vercelServerless(),
   adapter: node({
