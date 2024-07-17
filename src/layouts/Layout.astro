@@ -1,6 +1,12 @@
 ---
+import {
+  SignedIn,
+  OrganizationSwitcher,
+  UserButton,
+} from "@clerk/astro/components";
+
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -8,44 +14,76 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <header
+      class="flex items-center h-20 gap-4 px-4 border-b border-black border-solid sm:px-8 border-opacity-20"
+    >
+      <a href="/" class="flex items-center h-20 gap-2 sm:gap-4">
+        <!-- Logo -->
+      </a>
+      <div class="grow"></div>
+      <SignedIn>
+        <div class="hidden sm:block">
+          <OrganizationSwitcher after-create-organization-url="/dashboard" />
+        </div>
+        <div class="block sm:hidden">
+          <OrganizationSwitcher
+            after-create-organization-url="/dashboard"
+            :appearance={{
+              elements: {
+                organizationSwitcherTriggerIcon: "hidden",
+                organizationPreviewTextContainer: "hidden",
+                organizationSwitcherTrigger: "pr-0",
+              },
+            }}
+          />
+        </div>
+        <UserButton after-sign-out-url="/" />
+      </SignedIn>
+    </header>
+    <main class="grow">
+      <slot />
+    </main>
+    <footer
+      class="flex items-center h-20 gap-1 px-8 font-medium border-t md:px-20"
+    >
+      <!-- <Image
+             src="/clerk.svg"
+             alt="Clerk Logo"
+             width={64}
+             height={32}
+             priority
+           /> -->
+      <span class="text-sm">© 2023</span>
+      <nav class="flex justify-end grow sm:gap-2">
+        <a
+          class="flex gap-2 px-3 py-2 text-sm font-semibold text-gray-600 transition duration-100 rounded-md hover:text-gray-800"
+          href="https://clerk.com/docs/references/astro/overview"
+        >
+          <div class="m-auto">
+            <!-- <Icon name="Docs" /> -->
+          </div>
+          <span class="hidden sm:inline"> Visit Astro Clerk Docs</span>
+          <span class="inline sm:hidden"> Docs</span>
+        </a>
+        <a
+          class="flex gap-2 px-3 py-2 text-sm font-semibold text-gray-600 transition duration-100 rounded-md hover:text-gray-800"
+          href="https://github.com/wobsoriano/nuxt-clerk-template"
+        >
+          <div class="m-auto">
+            <!-- <Icon name="GitHub" /> -->
+          </div>
+          <span class="hidden sm:inline"> View on Github</span>
+        </a>
+      </nav>
+    </footer>
+  </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>
