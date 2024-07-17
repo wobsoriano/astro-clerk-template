@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="A simple and powerful Astro template featuring authentication and user management powered by Clerk." />
+    <meta
+      name="description"
+      content="A simple and powerful Astro template featuring authentication and user management powered by Clerk."
+    />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
@@ -10,11 +13,12 @@
   </head>
   <body class="min-h-screen flex flex-col antialiased">
     <slot />
-    <script is:inline src="https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"></script>
+    <script is:inline src="https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"
+    ></script>
   </body>
 </html>
 
-<style>
+<style is:global>
   :root {
     --font-geist-sans: "GeistVF", sans-serif;
     --font-geist-mono: "GeistMonoVF", monospace;
@@ -50,9 +54,7 @@
     src: url("/fonts/GeistMonoVF.woff") format("woff");
     font-display: swap;
   }
-</style>
 
-<style is:global>
   .mask {
     mask-image: linear-gradient(
       to bottom,
