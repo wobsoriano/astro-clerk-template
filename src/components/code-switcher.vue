@@ -50,7 +50,6 @@ onMounted(() => {
       if (!value) {
         return;
       }
-
       renderedCode.value = window.Prism.highlight(
         value,
         window.Prism.languages.javascript,
