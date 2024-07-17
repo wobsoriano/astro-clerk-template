@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-// import CodeSwitcher from '../components/code-switcher.vue'
+import CodeSwitcher from "../components/code-switcher.vue";
 import { UserDetails } from "../components/user-details";
 import LearnMore from "../components/learn-more.astro";
 import Footer from "../components/footer.astro";
@@ -48,7 +48,7 @@ if (!user) {
         <UserDetails client:only="react" />
       </div>
       <div class="pt-[3.5rem]">
-        <!-- <CodeSwitcher /> -->
+        <CodeSwitcher client:only="vue" />
       </div>
     </div>
   </main>
