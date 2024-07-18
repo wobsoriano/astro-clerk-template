@@ -25,3 +25,5 @@ pnpm-debug.log*
 
 .yalc
 yalc.lock
+
+.vercel
