@@ -3,17 +3,21 @@ import react from "@astrojs/react";
 import vue from "@astrojs/vue";
 import vercelServerless from "@astrojs/vercel/serverless";
 import clerk from "@clerk/astro";
-
 import tailwind from "@astrojs/tailwind";
+
+import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [
+    // Clerk integration
     clerk({
       signInForceRedirectUrl: "/dashboard",
       signUpForceRedirectUrl: "/dashboard",
       appearance: {
-        variables: { colorPrimary: "#000000" },
+        variables: {
+          colorPrimary: "#000000",
+        },
         elements: {
           formButtonPrimary:
             "bg-black border border-black border-solid hover:bg-white hover:text-black",
@@ -28,8 +32,11 @@ export default defineConfig({
         },
       },
     }),
+    // UI frameworks
     react(),
     vue(),
+    svelte(),
+    // Other
     tailwind(),
   ],
   output: "server",
