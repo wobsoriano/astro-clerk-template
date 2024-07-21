@@ -6,7 +6,7 @@ interface Card {
   linkText: string;
 }
 
-const { cards }: { cards: Card[] } = $props();
+export let cards: Card[];
 </script>
 
 <div class="relative bg-white" id="features">
