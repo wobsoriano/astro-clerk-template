@@ -13,7 +13,11 @@ This template allows you to get started with Clerk and Astro in a matter of minu
 
 ## Demo
 
-A hosted demo of this example is available at [astro-clerk-template.vercel.app](http://astro-clerk-template.vercel.app/)
+A hosted demo of this example is available at:
+
+- [Vercel](https://astro-clerk-template.vercel.app/)
+- [Cloudflare Pages](https://astro-clerk-template.pages.dev)
+- [Netlify](https://astro-clerk-template.netlify.app)
 
 ## Running the template
 
