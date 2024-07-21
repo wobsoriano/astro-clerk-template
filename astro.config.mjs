@@ -1,11 +1,17 @@
 import { defineConfig } from "astro/config";
-import react from "@astrojs/react";
-import vue from "@astrojs/vue";
-import vercelServerless from "@astrojs/vercel/serverless";
 import clerk from "@clerk/astro";
 import tailwind from "@astrojs/tailwind";
 
+// UI frameworks
+import react from "@astrojs/react";
+import vue from "@astrojs/vue";
 import svelte from "@astrojs/svelte";
+
+// Adapters
+import node from "@astrojs/node";
+import vercelServerless from "@astrojs/vercel/serverless";
+import netlify from "@astrojs/netlify";
+import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
@@ -40,5 +46,20 @@ export default defineConfig({
     tailwind(),
   ],
   output: "server",
-  adapter: vercelServerless(),
+  adapter: getAdapter(),
 });
+
+function getAdapter() {
+  const platform = process.env.PLATFORM;
+
+  switch (platform) {
+    case "vercel":
+      return vercelServerless();
+    case "netlify":
+      return netlify();
+    case "cloudflare":
+      return cloudflare();
+    default:
+      return node({ mode: "standalone" });
+  }
+}
