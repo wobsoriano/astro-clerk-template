@@ -58,7 +58,7 @@ function getAdapter() {
     case "netlify":
       return netlify();
     case "cloudflare":
-      return cloudflare();
+      return cloudflare({ imageService: 'cloudflare' });
     default:
       return node({ mode: "standalone" });
   }
