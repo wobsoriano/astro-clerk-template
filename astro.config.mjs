@@ -47,9 +47,9 @@ export default defineConfig({
   ],
   output: "server",
   adapter: getAdapter(),
-  image: {
-    service: getImageService()
-  }
+  // image: {
+  //   service: getImageService()
+  // }
 });
 
 function getAdapter() {
@@ -61,7 +61,7 @@ function getAdapter() {
     case "netlify":
       return netlify();
     case "cloudflare":
-      return cloudflare();
+      return cloudflare({ imageService: 'cloudflare' });
     default:
       return node({ mode: "standalone" });
   }
