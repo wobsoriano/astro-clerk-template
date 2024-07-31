@@ -20,6 +20,7 @@ export default defineConfig({
     clerk({
       signInForceRedirectUrl: "/dashboard",
       signUpForceRedirectUrl: "/dashboard",
+      afterSignOutUrl: '/',
       appearance: {
         variables: {
           colorPrimary: "#000000",

@@ -10,10 +10,10 @@ import { DASHBOARD_CARDS } from "../consts/cards";
 
 import { OrganizationSwitcher, UserButton } from "@clerk/astro/components";
 
-const user = await Astro.locals.currentUser();
+const { userId, redirectToSignIn } = Astro.locals.auth()
 
-if (!user) {
-  return Astro.locals.auth().redirectToSignIn();
+if (!userId) {
+  return redirectToSignIn();
 }
 ---
 
@@ -36,7 +36,6 @@ if (!user) {
               }}
             />
             <UserButton
-              afterSignOutUrl="/"
               appearance={{
                 elements: {
                   userButtonAvatarBox: "size-6",
