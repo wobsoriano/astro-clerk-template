@@ -9,12 +9,6 @@ import AstroLogo from "../components/astro-logo.astro";
 import { DASHBOARD_CARDS } from "../consts/cards";
 
 import { OrganizationSwitcher, UserButton } from "@clerk/astro/components";
-
-const { userId, redirectToSignIn } = Astro.locals.auth()
-
-if (!userId) {
-  return redirectToSignIn();
-}
 ---
 
 <Layout>
