@@ -1,4 +1,4 @@
-import { defineConfig, passthroughImageService } from "astro/config";
+import { defineConfig } from "astro/config";
 import clerk from "@clerk/astro";
 import tailwind from "@astrojs/tailwind";
 
@@ -47,9 +47,6 @@ export default defineConfig({
   ],
   output: "server",
   adapter: getAdapter(),
-  // image: {
-  //   service: getImageService()
-  // }
 });
 
 function getAdapter() {
@@ -69,16 +66,5 @@ function getAdapter() {
       });
     default:
       return node({ mode: "standalone" });
-  }
-}
-
-function getImageService() {
-  const platform = process.env.PLATFORM;
-
-  switch (platform) {
-    case "cloudflare":
-      return passthroughImageService();
-    default:
-      return undefined;
   }
 }
