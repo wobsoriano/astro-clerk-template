@@ -64,7 +64,7 @@ export function UserDetails() {
   const session = useStore($sessionStore);
   const organization = useStore($organizationStore);
 
-  if (!user || !session) return null;
+  if (!user || !session) return <div />;
 
   return (
     <div className="p-16 rounded-lg border border-[#EDEDED] bg-[#F1F1F2] background relative">
@@ -163,7 +163,7 @@ export function UserDetails() {
               </Row>
             </div>
           </>
-        ) : null}
+        ) : <div />}
       </div>
     </div>
   );
