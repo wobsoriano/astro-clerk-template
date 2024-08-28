@@ -20,7 +20,7 @@ export default defineConfig({
     clerk({
       signInForceRedirectUrl: "/dashboard",
       signUpForceRedirectUrl: "/dashboard",
-      afterSignOutUrl: '/',
+      afterSignOutUrl: "/",
       appearance: {
         variables: {
           colorPrimary: "#000000",
@@ -62,8 +62,8 @@ function getAdapter() {
       return cloudflare({
         imageService: "passthrough",
         platformProxy: {
-          enabled: true
-        }
+          enabled: true,
+        },
       });
     default:
       return node({ mode: "standalone" });

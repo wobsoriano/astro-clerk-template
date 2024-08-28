@@ -163,7 +163,9 @@ export function UserDetails() {
               </Row>
             </div>
           </>
-        ) : <div />}
+        ) : (
+          <div />
+        )}
       </div>
     </div>
   );
