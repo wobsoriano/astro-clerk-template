@@ -54,8 +54,9 @@ export default defineConfig({
         PUBLIC_CLERK_PUBLISHABLE_KEY: envField.string({ context: 'client', access: 'public' }),
         PUBLIC_CLERK_SIGN_IN_URL: envField.string({ context: 'client', access: 'public', optional: true }),
         PUBLIC_CLERK_SIGN_UP_URL: envField.string({ context: 'server', access: 'public', optional: true }),
-        CLERK_SECRET_KEY: envField.string({ context: 'server', access: 'public' }),
-      }
+        CLERK_SECRET_KEY: envField.string({ context: 'server', access: 'secret' }),
+      },
+      validateSecrets: true,
     }
   }
 });
