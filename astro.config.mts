@@ -9,7 +9,7 @@ import svelte from "@astrojs/svelte";
 
 // Adapters
 import node from "@astrojs/node";
-import vercelServerless from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel/serverless";
 import netlify from "@astrojs/netlify";
 import cloudflare from "@astrojs/cloudflare";
 
@@ -67,7 +67,7 @@ function getAdapter() {
 
   switch (platform) {
     case "vercel":
-      return vercelServerless();
+      return vercel({ imageService: true });
     case "netlify":
       return netlify();
     case "cloudflare":
