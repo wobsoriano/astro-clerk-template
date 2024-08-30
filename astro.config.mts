@@ -55,6 +55,7 @@ export default defineConfig({
         PUBLIC_CLERK_SIGN_IN_URL: envField.string({ context: 'client', access: 'public' }),
         PUBLIC_CLERK_SIGN_UP_URL: envField.string({ context: 'client', access: 'public' }),
         CLERK_SECRET_KEY: envField.string({ context: 'server', access: 'secret' }),
+        PLATFORM: envField.enum({ context: 'server', access: 'public', values: ['VERCEL', 'NETLIFY', 'CLOUDFLARE'], optional: true })
       },
       validateSecrets: true,
     }
