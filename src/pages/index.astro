@@ -16,6 +16,8 @@ import verify from "../images/verify@2xrl.webp";
 import userButton2 from "../images/user-button-2@2xrl.webp";
 import signUp from "../images/sign-up@2xrl.webp";
 import logo from "../images/logo.png";
+
+Astro.response.headers.set("Netlify-Vary", "cookie=__clerk_db_jwt|__client_uat");
 ---
 
 <Layout>
