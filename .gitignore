@@ -27,3 +27,4 @@ pnpm-debug.log*
 yalc.lock
 
 .vercel
+.netlify
