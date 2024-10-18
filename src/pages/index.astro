@@ -62,11 +62,11 @@ import logo from "../images/logo.png";
             </a>
           </SignedIn>
           <SignedOut>
-            <SignInButton
-              as="button"
-              class="px-4 py-2 rounded-full bg-[#131316] text-white text-sm font-semibold"
-            >
-              Sign In
+            <SignInButton asChild>
+              <button
+                class="px-4 py-2 rounded-full bg-[#131316] text-white text-sm font-semibold"
+                >Sign In</button
+              >
             </SignInButton>
           </SignedOut>
           <a

@@ -51,15 +51,32 @@ export default defineConfig({
   experimental: {
     env: {
       schema: {
-        PUBLIC_CLERK_PUBLISHABLE_KEY: envField.string({ context: 'client', access: 'public' }),
-        PUBLIC_CLERK_SIGN_IN_URL: envField.string({ context: 'client', access: 'public' }),
-        PUBLIC_CLERK_SIGN_UP_URL: envField.string({ context: 'client', access: 'public' }),
-        CLERK_SECRET_KEY: envField.string({ context: 'server', access: 'secret' }),
-        PLATFORM: envField.enum({ context: 'server', access: 'public', values: ['vercel', 'netlify', 'cloudflare'], optional: true })
+        PUBLIC_CLERK_PUBLISHABLE_KEY: envField.string({
+          context: "client",
+          access: "public",
+        }),
+        PUBLIC_CLERK_SIGN_IN_URL: envField.string({
+          context: "client",
+          access: "public",
+        }),
+        PUBLIC_CLERK_SIGN_UP_URL: envField.string({
+          context: "client",
+          access: "public",
+        }),
+        CLERK_SECRET_KEY: envField.string({
+          context: "server",
+          access: "secret",
+        }),
+        PLATFORM: envField.enum({
+          context: "server",
+          access: "public",
+          values: ["vercel", "netlify", "cloudflare"],
+          optional: true,
+        }),
       },
       validateSecrets: true,
-    }
-  }
+    },
+  },
 });
 
 function getAdapter() {
