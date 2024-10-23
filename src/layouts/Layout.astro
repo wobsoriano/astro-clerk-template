@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+
 const title = "Clerk Astro Template";
 const description =
   "A simple and powerful Astro template featuring authentication and user management powered by Clerk.";
@@ -17,6 +19,7 @@ const description =
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <title>Clerk Astro Template</title>
+    <ViewTransitions />
   </head>
   <body class="min-h-screen flex flex-col antialiased">
     <slot />
