@@ -74,12 +74,7 @@ export default defineConfig({
       }),
     },
     validateSecrets: true,
-  },
-  vite: {
-    ssr: {
-      external: ['node:async_hooks'],
-    },
-  },
+  }
 });
 
 function getAdapter() {
@@ -93,9 +88,9 @@ function getAdapter() {
     case "cloudflare":
       return cloudflare({
         imageService: "passthrough",
-        platformProxy: {
-          enabled: true,
-        },
+        // platformProxy: {
+        //   enabled: true,
+        // },
       });
     default:
       return node({ mode: "standalone" });
