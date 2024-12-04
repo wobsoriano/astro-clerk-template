@@ -1,3 +1,30 @@
+diff --git a/dist/async-local-storage.client.js b/dist/async-local-storage.client.js
+index f88ea745ced15cd323b54a1714ff15e029529e9d..7fb158d8bee845e55b085d5f597a70d96f1dfa6d 100644
+--- a/dist/async-local-storage.client.js
++++ b/dist/async-local-storage.client.js
+@@ -4,18 +4,22 @@ var sharedAsyncLocalStorageNotAvailableError = new Error(
+ );
+ var FakeAsyncLocalStorage = class {
+   disable() {
++    console.log('Tried to access disable() method')
+     throw sharedAsyncLocalStorageNotAvailableError;
+   }
+   getStore() {
+     return void 0;
+   }
+   run() {
++    console.log('Tried to access run() method')
+     throw sharedAsyncLocalStorageNotAvailableError;
+   }
+   exit() {
++    console.log('Tried to access exit() method')
+     throw sharedAsyncLocalStorageNotAvailableError;
+   }
+   enterWith() {
++    console.log('Tried to access enterWith() method')
+     throw sharedAsyncLocalStorageNotAvailableError;
+   }
+ };
 diff --git a/package.json b/package.json
 index ecf86cb4c8cf86d6fc7d6455d9dbca69ff8b0eea..3a85e78564881b6f7faa18157452c7407a4a09e9 100644
 --- a/package.json
