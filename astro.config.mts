@@ -75,6 +75,11 @@ export default defineConfig({
     },
     validateSecrets: true,
   },
+  vite: {
+    ssr: {
+      external: ['node:async_hooks'],
+    },
+  },
 });
 
 function getAdapter() {
