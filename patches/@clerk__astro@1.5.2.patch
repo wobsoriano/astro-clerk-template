@@ -1,17 +1,3 @@
-diff --git a/dist/async-local-storage.client.js b/dist/async-local-storage.client.js
-index f88ea745ced15cd323b54a1714ff15e029529e9d..bf1e8bde88a9bb3e844a2d1031065b77a382cad3 100644
---- a/dist/async-local-storage.client.js
-+++ b/dist/async-local-storage.client.js
-@@ -10,7 +10,8 @@ var FakeAsyncLocalStorage = class {
-     return void 0;
-   }
-   run() {
--    throw sharedAsyncLocalStorageNotAvailableError;
-+    // console.log('Tried to access run() method')
-+    // throw sharedAsyncLocalStorageNotAvailableError;
-   }
-   exit() {
-     throw sharedAsyncLocalStorageNotAvailableError;
 diff --git a/package.json b/package.json
 index ecf86cb4c8cf86d6fc7d6455d9dbca69ff8b0eea..3a85e78564881b6f7faa18157452c7407a4a09e9 100644
 --- a/package.json
