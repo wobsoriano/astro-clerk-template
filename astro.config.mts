@@ -5,13 +5,14 @@ import tailwind from "@astrojs/tailwind";
 // UI frameworks
 import react from "@astrojs/react";
 import vue from "@astrojs/vue";
-import svelte from "@astrojs/svelte";
 
 // Adapters
 import node from "@astrojs/node";
 import vercel from "@astrojs/vercel/serverless";
 import netlify from "@astrojs/netlify";
 import cloudflare from "@astrojs/cloudflare";
+
+import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
@@ -48,34 +49,32 @@ export default defineConfig({
   ],
   output: "server",
   adapter: getAdapter(),
-  experimental: {
-    env: {
-      schema: {
-        PUBLIC_CLERK_PUBLISHABLE_KEY: envField.string({
-          context: "client",
-          access: "public",
-        }),
-        PUBLIC_CLERK_SIGN_IN_URL: envField.string({
-          context: "client",
-          access: "public",
-        }),
-        PUBLIC_CLERK_SIGN_UP_URL: envField.string({
-          context: "client",
-          access: "public",
-        }),
-        CLERK_SECRET_KEY: envField.string({
-          context: "server",
-          access: "secret",
-        }),
-        PLATFORM: envField.enum({
-          context: "server",
-          access: "public",
-          values: ["vercel", "netlify", "cloudflare"],
-          optional: true,
-        }),
-      },
-      validateSecrets: true,
+  env: {
+    schema: {
+      PUBLIC_CLERK_PUBLISHABLE_KEY: envField.string({
+        context: "client",
+        access: "public",
+      }),
+      PUBLIC_CLERK_SIGN_IN_URL: envField.string({
+        context: "client",
+        access: "public",
+      }),
+      PUBLIC_CLERK_SIGN_UP_URL: envField.string({
+        context: "client",
+        access: "public",
+      }),
+      CLERK_SECRET_KEY: envField.string({
+        context: "server",
+        access: "secret",
+      }),
+      PLATFORM: envField.enum({
+        context: "server",
+        access: "public",
+        values: ["vercel", "netlify", "cloudflare"],
+        optional: true,
+      }),
     },
+    validateSecrets: true,
   },
 });
 

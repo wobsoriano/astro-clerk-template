@@ -1,0 +1,13 @@
+diff --git a/package.json b/package.json
+index ecf86cb4c8cf86d6fc7d6455d9dbca69ff8b0eea..1f8112c6a1ffd1fb56a35e10c7d20d6f308689a4 100644
+--- a/package.json
++++ b/package.json
+@@ -83,7 +83,7 @@
+     "@clerk/eslint-config-custom": "0.0.2"
+   },
+   "peerDependencies": {
+-    "astro": "^3.2.0 || ^4.0.0"
++    "astro": "^4.14.0 || ^5.0.0"
+   },
+   "engines": {
+     "node": ">=18.17.0"
