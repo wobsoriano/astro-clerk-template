@@ -5,14 +5,13 @@ import tailwind from "@astrojs/tailwind";
 // UI frameworks
 import react from "@astrojs/react";
 import vue from "@astrojs/vue";
+import svelte from "@astrojs/svelte";
 
 // Adapters
 import node from "@astrojs/node";
 import vercel from "@astrojs/vercel/serverless";
 import netlify from "@astrojs/netlify";
 import cloudflare from "@astrojs/cloudflare";
-
-import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
