@@ -1,13 +1,14 @@
 diff --git a/package.json b/package.json
-index ecf86cb4c8cf86d6fc7d6455d9dbca69ff8b0eea..573e22638465a02491cc7c0b65b5badf840b586b 100644
+index ecf86cb4c8cf86d6fc7d6455d9dbca69ff8b0eea..781921ea0d06e5657462335865e47d0f7614df97 100644
 --- a/package.json
 +++ b/package.json
-@@ -29,7 +29,7 @@
+@@ -28,8 +28,8 @@
+   "type": "module",
    "imports": {
      "#async-local-storage": {
-       "workerd": "./dist/async-local-storage.server.js",
--      "browser": "./dist/async-local-storage.client.js",
-+      "random": "./dist/async-local-storage.client.js",
+-      "workerd": "./dist/async-local-storage.server.js",
+       "browser": "./dist/async-local-storage.client.js",
++      "workerd": "./dist/async-local-storage.server.js",
        "node": "./dist/async-local-storage.server.js",
        "default": "./dist/async-local-storage.server.js"
      }
