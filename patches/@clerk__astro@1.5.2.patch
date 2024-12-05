@@ -1,7 +1,16 @@
 diff --git a/package.json b/package.json
-index ecf86cb4c8cf86d6fc7d6455d9dbca69ff8b0eea..3a85e78564881b6f7faa18157452c7407a4a09e9 100644
+index ecf86cb4c8cf86d6fc7d6455d9dbca69ff8b0eea..573e22638465a02491cc7c0b65b5badf840b586b 100644
 --- a/package.json
 +++ b/package.json
+@@ -29,7 +29,7 @@
+   "imports": {
+     "#async-local-storage": {
+       "workerd": "./dist/async-local-storage.server.js",
+-      "browser": "./dist/async-local-storage.client.js",
++      "random": "./dist/async-local-storage.client.js",
+       "node": "./dist/async-local-storage.server.js",
+       "default": "./dist/async-local-storage.server.js"
+     }
 @@ -83,7 +83,7 @@
      "@clerk/eslint-config-custom": "0.0.2"
    },

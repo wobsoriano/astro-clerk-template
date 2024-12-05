@@ -74,11 +74,6 @@ export default defineConfig({
       }),
     },
     validateSecrets: true,
-  },
-  vite: {
-    resolve: {
-      conditions: ['browser']
-    }
   }
 });
 
