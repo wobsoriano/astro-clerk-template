@@ -74,6 +74,11 @@ export default defineConfig({
       }),
     },
     validateSecrets: true,
+  },
+  vite: {
+    ssr: {
+      external: ['node:stream']
+    }
   }
 });
 
