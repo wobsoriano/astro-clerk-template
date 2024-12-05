@@ -6,7 +6,7 @@ settings:
 
 patchedDependencies:
   '@clerk/astro@1.5.2':
-    hash: inl4ovvps7rebrp4yxw44rlad4
+    hash: w5o4ynph2v4qkdszypxogihfkm
     path: patches/@clerk__astro@1.5.2.patch
 
 importers:
@@ -17,32 +17,32 @@ importers:
         specifier: ^0.9.4
         version: 0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.7.2)
       '@astrojs/cloudflare':
-        specifier: ^12.0.0
-        version: 12.0.0(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))
+        specifier: ^12.0.1
+        version: 12.0.1(@types/node@22.5.5)(astro@5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(jiti@1.21.6)(yaml@2.5.1)
       '@astrojs/netlify':
         specifier: ^6.0.0
-        version: 6.0.0(@types/node@22.5.5)(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(jiti@1.21.6)(rollup@4.28.0)(yaml@2.5.1)
+        version: 6.0.0(@types/node@22.5.5)(astro@5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(jiti@1.21.6)(rollup@4.28.0)(yaml@2.5.1)
       '@astrojs/node':
         specifier: ^9.0.0
-        version: 9.0.0(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))
+        version: 9.0.0(astro@5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))
       '@astrojs/react':
         specifier: ^4.0.0
         version: 4.0.0(@types/node@22.5.5)(@types/react-dom@18.3.0)(@types/react@18.3.7)(jiti@1.21.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yaml@2.5.1)
       '@astrojs/svelte':
         specifier: ^7.0.1
-        version: 7.0.1(@types/node@22.5.5)(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(jiti@1.21.6)(svelte@5.6.2)(typescript@5.7.2)(yaml@2.5.1)
+        version: 7.0.1(@types/node@22.5.5)(astro@5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(jiti@1.21.6)(svelte@5.6.2)(typescript@5.7.2)(yaml@2.5.1)
       '@astrojs/tailwind':
         specifier: ^5.1.3
-        version: 5.1.3(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(tailwindcss@3.4.12)
+        version: 5.1.3(astro@5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(tailwindcss@3.4.12)
       '@astrojs/vercel':
         specifier: ^8.0.0
-        version: 8.0.0(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(react@18.3.1)(rollup@4.28.0)(svelte@5.6.2)(vue@3.5.6(typescript@5.7.2))
+        version: 8.0.0(astro@5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(react@18.3.1)(rollup@4.28.0)(svelte@5.6.2)(vue@3.5.6(typescript@5.7.2))
       '@astrojs/vue':
         specifier: ^5.0.1
-        version: 5.0.1(@types/node@22.5.5)(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(jiti@1.21.6)(rollup@4.28.0)(vue@3.5.6(typescript@5.7.2))(yaml@2.5.1)
+        version: 5.0.1(@types/node@22.5.5)(astro@5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(jiti@1.21.6)(rollup@4.28.0)(vue@3.5.6(typescript@5.7.2))(yaml@2.5.1)
       '@clerk/astro':
         specifier: ^1.5.2
-        version: 1.5.2(patch_hash=inl4ovvps7rebrp4yxw44rlad4)(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 1.5.2(patch_hash=w5o4ynph2v4qkdszypxogihfkm)(astro@5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@nanostores/react':
         specifier: ^0.7.3
         version: 0.7.3(nanostores@0.11.3)(react@18.3.1)
@@ -56,8 +56,8 @@ importers:
         specifier: ^18.3.0
         version: 18.3.0
       astro:
-        specifier: ^5.0.2
-        version: 5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -112,8 +112,8 @@ packages:
     peerDependencies:
       typescript: ^5.0.0
 
-  '@astrojs/cloudflare@12.0.0':
-    resolution: {integrity: sha512-qeTVXveNjQ4/4FRybJtik5/0FbWkirb1h3/6EdPZNEVm0FBGvcVZka2V5F1xu7YydLuwEPlucD7SQsFOr0EwHA==}
+  '@astrojs/cloudflare@12.0.1':
+    resolution: {integrity: sha512-TFeE7nMkzjP/zxH2Ra1eomXhoOD4sv6GFgZyIfAMsCURzBTszxmMh6MC/ChesudFKN0Cbn4fTOoLCgQwxYXVYw==}
     peerDependencies:
       astro: ^5.0.0
 
@@ -1622,8 +1622,8 @@ packages:
     peerDependencies:
       astro: ^4.12.0
 
-  astro@5.0.2:
-    resolution: {integrity: sha512-MKf82vUiTZ2aK+c/8EDnLYIsToBdVVk4PuhhGdE8F/PcuUyS+oIcuCPf30iVf8WCQwXOfnYGnv1JbRjzkqUc3w==}
+  astro@5.0.3:
+    resolution: {integrity: sha512-qpeN+POmmfAQu/XDXaI2CxkUgQFwH9uMUVaA1reV9rybzIbOVYc3E3BU5SkiP/W4BMUFPdJtyw6+/n/0AUv6rw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -3999,23 +3999,35 @@ snapshots:
       - prettier
       - prettier-plugin-astro
 
-  '@astrojs/cloudflare@12.0.0(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))':
+  '@astrojs/cloudflare@12.0.1(@types/node@22.5.5)(astro@5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(jiti@1.21.6)(yaml@2.5.1)':
     dependencies:
       '@astrojs/internal-helpers': 0.4.1
       '@astrojs/underscore-redirects': 0.4.0
       '@cloudflare/workers-types': 4.20241202.0
-      '@inox-tools/astro-when': 0.2.4(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))
-      astro: 5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)
+      '@inox-tools/astro-when': 0.2.4(astro@5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))
+      astro: 5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)
       esbuild: 0.24.0
       estree-walker: 3.0.3
       magic-string: 0.30.14
       miniflare: 3.20241106.2
       tiny-glob: 0.2.9
+      vite: 6.0.2(@types/node@22.5.5)(jiti@1.21.6)(yaml@2.5.1)
       wrangler: 3.92.0(@cloudflare/workers-types@4.20241202.0)
     transitivePeerDependencies:
+      - '@types/node'
       - bufferutil
+      - jiti
+      - less
+      - lightningcss
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
       - supports-color
+      - terser
+      - tsx
       - utf-8-validate
+      - yaml
 
   '@astrojs/compiler@2.10.3': {}
 
@@ -4073,13 +4085,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/netlify@6.0.0(@types/node@22.5.5)(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(jiti@1.21.6)(rollup@4.28.0)(yaml@2.5.1)':
+  '@astrojs/netlify@6.0.0(@types/node@22.5.5)(astro@5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(jiti@1.21.6)(rollup@4.28.0)(yaml@2.5.1)':
     dependencies:
       '@astrojs/internal-helpers': 0.4.1
       '@astrojs/underscore-redirects': 0.4.0
       '@netlify/functions': 2.8.1
       '@vercel/nft': 0.27.7(rollup@4.28.0)
-      astro: 5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)
+      astro: 5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)
       esbuild: 0.24.0
       vite: 6.0.1(@types/node@22.5.5)(jiti@1.21.6)(yaml@2.5.1)
     transitivePeerDependencies:
@@ -4098,9 +4110,9 @@ snapshots:
       - tsx
       - yaml
 
-  '@astrojs/node@9.0.0(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))':
+  '@astrojs/node@9.0.0(astro@5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))':
     dependencies:
-      astro: 5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)
+      astro: 5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)
       send: 1.1.0
       server-destroy: 1.0.1
     transitivePeerDependencies:
@@ -4133,10 +4145,10 @@ snapshots:
       - tsx
       - yaml
 
-  '@astrojs/svelte@7.0.1(@types/node@22.5.5)(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(jiti@1.21.6)(svelte@5.6.2)(typescript@5.7.2)(yaml@2.5.1)':
+  '@astrojs/svelte@7.0.1(@types/node@22.5.5)(astro@5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(jiti@1.21.6)(svelte@5.6.2)(typescript@5.7.2)(yaml@2.5.1)':
     dependencies:
       '@sveltejs/vite-plugin-svelte': 5.0.1(svelte@5.6.2)(vite@6.0.2(@types/node@22.5.5)(jiti@1.21.6)(yaml@2.5.1))
-      astro: 5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)
+      astro: 5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)
       svelte: 5.6.2
       svelte2tsx: 0.7.30(svelte@5.6.2)(typescript@5.7.2)
       typescript: 5.7.2
@@ -4155,9 +4167,9 @@ snapshots:
       - tsx
       - yaml
 
-  '@astrojs/tailwind@5.1.3(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(tailwindcss@3.4.12)':
+  '@astrojs/tailwind@5.1.3(astro@5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(tailwindcss@3.4.12)':
     dependencies:
-      astro: 5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)
+      astro: 5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)
       autoprefixer: 10.4.20(postcss@8.4.49)
       postcss: 8.4.49
       postcss-load-config: 4.0.2(postcss@8.4.49)
@@ -4179,13 +4191,13 @@ snapshots:
 
   '@astrojs/underscore-redirects@0.4.0': {}
 
-  '@astrojs/vercel@8.0.0(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(react@18.3.1)(rollup@4.28.0)(svelte@5.6.2)(vue@3.5.6(typescript@5.7.2))':
+  '@astrojs/vercel@8.0.0(astro@5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(react@18.3.1)(rollup@4.28.0)(svelte@5.6.2)(vue@3.5.6(typescript@5.7.2))':
     dependencies:
       '@astrojs/internal-helpers': 0.4.1
       '@vercel/analytics': 1.4.1(react@18.3.1)(svelte@5.6.2)(vue@3.5.6(typescript@5.7.2))
       '@vercel/edge': 1.1.2
       '@vercel/nft': 0.27.7(rollup@4.28.0)
-      astro: 5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)
+      astro: 5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)
       esbuild: 0.24.0
       fast-glob: 3.3.2
     transitivePeerDependencies:
@@ -4200,12 +4212,12 @@ snapshots:
       - vue
       - vue-router
 
-  '@astrojs/vue@5.0.1(@types/node@22.5.5)(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(jiti@1.21.6)(rollup@4.28.0)(vue@3.5.6(typescript@5.7.2))(yaml@2.5.1)':
+  '@astrojs/vue@5.0.1(@types/node@22.5.5)(astro@5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(jiti@1.21.6)(rollup@4.28.0)(vue@3.5.6(typescript@5.7.2))(yaml@2.5.1)':
     dependencies:
       '@vitejs/plugin-vue': 5.2.1(vite@6.0.2(@types/node@22.5.5)(jiti@1.21.6)(yaml@2.5.1))(vue@3.5.6(typescript@5.7.2))
       '@vitejs/plugin-vue-jsx': 4.0.1(vite@6.0.2(@types/node@22.5.5)(jiti@1.21.6)(yaml@2.5.1))(vue@3.5.6(typescript@5.7.2))
       '@vue/compiler-sfc': 3.5.12
-      astro: 5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)
+      astro: 5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)
       vite: 6.0.2(@types/node@22.5.5)(jiti@1.21.6)(yaml@2.5.1)
       vite-plugin-vue-devtools: 7.6.7(rollup@4.28.0)(vite@6.0.2(@types/node@22.5.5)(jiti@1.21.6)(yaml@2.5.1))(vue@3.5.6(typescript@5.7.2))
       vue: 3.5.6(typescript@5.7.2)
@@ -4442,12 +4454,12 @@ snapshots:
       '@babel/helper-string-parser': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
 
-  '@clerk/astro@1.5.2(patch_hash=inl4ovvps7rebrp4yxw44rlad4)(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@clerk/astro@1.5.2(patch_hash=w5o4ynph2v4qkdszypxogihfkm)(astro@5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@clerk/backend': 1.19.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/shared': 2.18.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/types': 4.36.0
-      astro: 5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)
+      astro: 5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)
       nanoid: 5.0.7
       nanostores: 0.11.3
     transitivePeerDependencies:
@@ -4868,10 +4880,10 @@ snapshots:
   '@img/sharp-win32-x64@0.33.5':
     optional: true
 
-  '@inox-tools/astro-when@0.2.4(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))':
+  '@inox-tools/astro-when@0.2.4(astro@5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))':
     dependencies:
-      astro: 5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)
-      astro-integration-kit: 0.16.1(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))
+      astro: 5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)
+      astro-integration-kit: 0.16.1(astro@5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))
       debug: 4.3.7
     transitivePeerDependencies:
       - supports-color
@@ -5568,13 +5580,13 @@ snapshots:
       - supports-color
       - typescript
 
-  astro-integration-kit@0.16.1(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)):
+  astro-integration-kit@0.16.1(astro@5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)):
     dependencies:
-      astro: 5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)
+      astro: 5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1)
       pathe: 1.1.2
       recast: 0.23.9
 
-  astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1):
+  astro@5.0.3(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.2
