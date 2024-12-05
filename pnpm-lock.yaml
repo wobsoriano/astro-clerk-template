@@ -6,7 +6,7 @@ settings:
 
 patchedDependencies:
   '@clerk/astro@1.5.2':
-    hash: ju4rckrbwadpwhw3v772ntpohu
+    hash: inl4ovvps7rebrp4yxw44rlad4
     path: patches/@clerk__astro@1.5.2.patch
 
 importers:
@@ -42,7 +42,7 @@ importers:
         version: 5.0.1(@types/node@22.5.5)(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(jiti@1.21.6)(rollup@4.28.0)(vue@3.5.6(typescript@5.7.2))(yaml@2.5.1)
       '@clerk/astro':
         specifier: ^1.5.2
-        version: 1.5.2(patch_hash=ju4rckrbwadpwhw3v772ntpohu)(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 1.5.2(patch_hash=inl4ovvps7rebrp4yxw44rlad4)(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@nanostores/react':
         specifier: ^0.7.3
         version: 0.7.3(nanostores@0.11.3)(react@18.3.1)
@@ -4442,7 +4442,7 @@ snapshots:
       '@babel/helper-string-parser': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
 
-  '@clerk/astro@1.5.2(patch_hash=ju4rckrbwadpwhw3v772ntpohu)(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@clerk/astro@1.5.2(patch_hash=inl4ovvps7rebrp4yxw44rlad4)(astro@5.0.2(@types/node@22.5.5)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.5.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@clerk/backend': 1.19.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@clerk/shared': 2.18.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
