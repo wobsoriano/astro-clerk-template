@@ -1,5 +1,5 @@
 diff --git a/dist/index.js b/dist/index.js
-index ea65fa6e50c26e32f0def7adfb5889af9d921d00..bfcd26f0fe0af2ebb0f35bc9b5134c272d24b76d 100644
+index ea65fa6e50c26e32f0def7adfb5889af9d921d00..90d389ee5046994a924d5b74657d68ab6b685af2 100644
 --- a/dist/index.js
 +++ b/dist/index.js
 @@ -112,6 +112,17 @@ function createIntegration() {
@@ -15,13 +15,13 @@ index ea65fa6e50c26e32f0def7adfb5889af9d921d00..bfcd26f0fe0af2ebb0f35bc9b5134c27
 +              }
 +            }
 +
-+            removeClerkQueryParam('__clerk_handshake')
++            removeClerkQueryParam('__netlify_fix')
 +
              // Taken from https://github.com/withastro/astro/blob/e10b03e88c22592fbb42d7245b65c4f486ab736d/packages/astro/src/transitions/router.ts#L39.
              // Importing it directly from astro:transitions/client breaks custom client-side routing
              // even when View Transitions is disabled.
 diff --git a/dist/server/index.js b/dist/server/index.js
-index f65760365c60f46a00bb0949ff8fbaf0e14536db..c7647fec80cb9739ff90671902737c235b23ea96 100644
+index f65760365c60f46a00bb0949ff8fbaf0e14536db..a55aca4e31a73c6512da789fd9eb768cf3389ef8 100644
 --- a/dist/server/index.js
 +++ b/dist/server/index.js
 @@ -201,6 +201,13 @@ var clerkMiddleware = (...args) => {
@@ -31,7 +31,7 @@ index f65760365c60f46a00bb0949ff8fbaf0e14536db..c7647fec80cb9739ff90671902737c23
 +      // Temporary netlify redirect loop workaround
 +      if (!locationHeader.includes('client/handshake') && !locationHeader.includes('__clerk_handshake')) {
 +        const url = new URL(locationHeader);
-+        url.searchParams.append('q', Date.now().toString());
++        url.searchParams.append('__netlify_fix', Date.now().toString());
 +        requestState.headers.set('Location', url.toString());
 +      }
 +
