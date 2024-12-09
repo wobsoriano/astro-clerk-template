@@ -1,3 +1,25 @@
+diff --git a/dist/index.js b/dist/index.js
+index ea65fa6e50c26e32f0def7adfb5889af9d921d00..bfcd26f0fe0af2ebb0f35bc9b5134c272d24b76d 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -112,6 +112,17 @@ function createIntegration() {
+             ${command === "dev" ? `console.log("${name}","Initialize Clerk: page")` : ""}
+             import { runInjectionScript, swapDocument } from "${buildImportPath}";
+ 
++            // Remove param and update URL
++            function removeClerkQueryParam(param) {
++              const url = new URL(window.location.href);
++              if (url.searchParams.has(param)) {
++                url.searchParams.delete(param);
++                window.history.replaceState(window.history.state, '', url);
++              }
++            }
++
++            removeClerkQueryParam('__clerk_handshake')
++
+             // Taken from https://github.com/withastro/astro/blob/e10b03e88c22592fbb42d7245b65c4f486ab736d/packages/astro/src/transitions/router.ts#L39.
+             // Importing it directly from astro:transitions/client breaks custom client-side routing
+             // even when View Transitions is disabled.
 diff --git a/dist/server/index.js b/dist/server/index.js
 index f65760365c60f46a00bb0949ff8fbaf0e14536db..c7647fec80cb9739ff90671902737c235b23ea96 100644
 --- a/dist/server/index.js
