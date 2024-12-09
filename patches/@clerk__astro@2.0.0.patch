@@ -1,0 +1,18 @@
+diff --git a/dist/server/index.js b/dist/server/index.js
+index f65760365c60f46a00bb0949ff8fbaf0e14536db..c7647fec80cb9739ff90671902737c235b23ea96 100644
+--- a/dist/server/index.js
++++ b/dist/server/index.js
+@@ -201,6 +201,13 @@ var clerkMiddleware = (...args) => {
+     );
+     const locationHeader = requestState.headers.get(constants3.Headers.Location);
+     if (locationHeader) {
++      // Temporary netlify redirect loop workaround
++      if (!locationHeader.includes('client/handshake') && !locationHeader.includes('__clerk_handshake')) {
++        const url = new URL(locationHeader);
++        url.searchParams.append('q', Date.now().toString());
++        requestState.headers.set('Location', url.toString());
++      }
++
+       const res = new Response(null, { status: 307, headers: requestState.headers });
+       return decorateResponseWithObservabilityHeaders(res, requestState);
+     } else if (requestState.status === AuthStatus2.Handshake) {
