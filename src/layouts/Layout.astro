@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 const title = "Clerk Astro Template";
 const description =
@@ -19,7 +19,7 @@ const description =
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <title>Clerk Astro Template</title>
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body class="min-h-screen flex flex-col antialiased">
     <slot />
