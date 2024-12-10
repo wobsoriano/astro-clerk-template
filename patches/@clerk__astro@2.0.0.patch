@@ -21,26 +21,38 @@ index ea65fa6e50c26e32f0def7adfb5889af9d921d00..aeb3a52fe897dd003f06614f68c4a18c
              // Importing it directly from astro:transitions/client breaks custom client-side routing
              // even when View Transitions is disabled.
 diff --git a/dist/server/index.js b/dist/server/index.js
-index f65760365c60f46a00bb0949ff8fbaf0e14536db..a43839ffd53b6187f655e0a437d608aa4a13b9a9 100644
+index f65760365c60f46a00bb0949ff8fbaf0e14536db..1685b3b5fd49a835a05ffc925dca648c89a6bc95 100644
 --- a/dist/server/index.js
 +++ b/dist/server/index.js
 @@ -199,8 +199,19 @@ var clerkMiddleware = (...args) => {
        clerkRequest,
        createAuthenticateRequestOptions(clerkRequest, options, context)
      );
-+    console.log('requestState', requestState)
-+    console.log('headers', requestState.headers)
++
      const locationHeader = requestState.headers.get(constants3.Headers.Location);
      if (locationHeader) {
-+        // Temporary netlify redirect loop workaround
-+        const isHandshakeUrl = locationHeader.includes('client/handshake');
-+        const hasHandshakeQueryParam = locationHeader.includes('__clerk_handshake');
-+        if (!isHandshakeUrl && !hasHandshakeQueryParam) {
-+        const url = new URL(locationHeader);
-+        url.searchParams.append('__netlify_clerk_cache_bust', Date.now().toString());
-+        requestState.headers.set('Location', url.toString());
-+      }
++      // Temporary netlify redirect loop workaround
++      // const isHandshakeUrl = locationHeader.includes('client/handshake');
++      // const hasHandshakeQueryParam = locationHeader.includes('__clerk_handshake');
++      // if (!isHandshakeUrl && !hasHandshakeQueryParam) {
++      //   const url = new URL(locationHeader);
++      //   url.searchParams.append('__netlify_clerk_cache_bust', Date.now().toString());
++      //   requestState.headers.set('Location', url.toString());
++      // }
++      
 +
        const res = new Response(null, { status: 307, headers: requestState.headers });
        return decorateResponseWithObservabilityHeaders(res, requestState);
      } else if (requestState.status === AuthStatus2.Handshake) {
+@@ -226,6 +237,11 @@ var clerkMiddleware = (...args) => {
+           response.headers.append(key, value);
+         });
+       }
++
++      const bustHeader = 'X-CLERK-NETLIFY-CACHE-BUST';
++      response.headers.set(bustHeader, Date.now().toString());
++      response.headers.set('Netlify-Vary', `headers=${bustHeader}`);
++
+       return response;
+     });
+   };
