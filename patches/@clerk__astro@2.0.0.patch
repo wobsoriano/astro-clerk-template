@@ -21,14 +21,27 @@ index ea65fa6e50c26e32f0def7adfb5889af9d921d00..dbd0dd5c6c49af436d40ef658624690e
              // Importing it directly from astro:transitions/client breaks custom client-side routing
              // even when View Transitions is disabled.
 diff --git a/dist/server/index.js b/dist/server/index.js
-index f65760365c60f46a00bb0949ff8fbaf0e14536db..4fb45d5745ae9a8165ce44fafd970393e2e14285 100644
+index f65760365c60f46a00bb0949ff8fbaf0e14536db..7b233953c573861252fca5f628ab780387d75de4 100644
 --- a/dist/server/index.js
 +++ b/dist/server/index.js
-@@ -177,6 +177,15 @@ var serverRedirectWithAuth = (context, clerkRequest, res, opts) => {
+@@ -3,7 +3,7 @@ import { verifyToken, createClerkClient as createClerkClient2 } from "@clerk/bac
+ 
+ // src/server/clerk-middleware.ts
+ import { AuthStatus as AuthStatus2, constants as constants3, createClerkRequest, createRedirect } from "@clerk/backend/internal";
+-import { isDevelopmentFromSecretKey as isDevelopmentFromSecretKey2 } from "@clerk/shared/keys";
++import { isDevelopmentFromPublishableKey, isDevelopmentFromSecretKey as isDevelopmentFromSecretKey2 } from "@clerk/shared/keys";
+ import { isHttpOrHttps } from "@clerk/shared/proxy";
+ import { eventMethodCalled } from "@clerk/shared/telemetry";
+ import { handleValueOrFn } from "@clerk/shared/utils";
+@@ -177,6 +177,19 @@ var serverRedirectWithAuth = (context, clerkRequest, res, opts) => {
    return res;
  };
  
 +function handleNetlifyCacheInDevInstance(locationHeader, requestState) {
++  if (!process.env.NETLIFY || !isDevelopmentFromPublishableKey(requestState.publishableKey)) {
++    return;
++  }
++
 +  const hasHandshakeQueryParam = locationHeader.includes('__clerk_handshake');
 +  if (!hasHandshakeQueryParam) {
 +    const url = new URL(locationHeader);
@@ -40,7 +53,7 @@ index f65760365c60f46a00bb0949ff8fbaf0e14536db..4fb45d5745ae9a8165ce44fafd970393
  // src/server/clerk-middleware.ts
  var CONTROL_FLOW_ERROR = {
    REDIRECT_TO_SIGN_IN: "CLERK_PROTECT_REDIRECT_TO_SIGN_IN"
-@@ -199,8 +208,11 @@ var clerkMiddleware = (...args) => {
+@@ -199,8 +212,11 @@ var clerkMiddleware = (...args) => {
        clerkRequest,
        createAuthenticateRequestOptions(clerkRequest, options, context)
      );
