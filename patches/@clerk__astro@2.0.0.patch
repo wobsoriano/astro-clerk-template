@@ -1,25 +1,5 @@
-diff --git a/components/interactive/SignIn.astro b/components/interactive/SignIn.astro
-index e4e2ab869f8106c9d86cbfeb380d3621c47cf391..d1d811ec727c616e33c6645dd925503d76ea52e3 100644
---- a/components/interactive/SignIn.astro
-+++ b/components/interactive/SignIn.astro
-@@ -3,6 +3,15 @@ import type { SignInProps } from "@clerk/types";
- type Props = SignInProps
- 
- import InternalUIComponentRenderer from './InternalUIComponentRenderer.astro'
-+
-+const isNetlify = import.meta.env.IS_NETLIFY;
-+const isNetlify2 = import.meta.env.NETLIFY;
- ---
- 
-+<div>IS NETLIFY CLIENT {import.meta.env.IS_NETLIFY}</div>
-+<div>IS NETLIFY SERVER {isNetlify}</div>
-+<br />
-+<div>NETLIFY CLIENT {import.meta.env.NETLIFY}</div>
-+<div>NETLIFY SERVER {isNetlify2}</div>
-+<br />
- <InternalUIComponentRenderer {...Astro.props} component="sign-in" />
 diff --git a/dist/index.js b/dist/index.js
-index ea65fa6e50c26e32f0def7adfb5889af9d921d00..3b031662e75b6b9e8c201c2bf3a7a1df684a33c8 100644
+index ea65fa6e50c26e32f0def7adfb5889af9d921d00..0ac55c1df1c855562ddca359b00b7991125a60df 100644
 --- a/dist/index.js
 +++ b/dist/index.js
 @@ -60,6 +60,7 @@ function createIntegration() {
@@ -30,17 +10,7 @@ index ea65fa6e50c26e32f0def7adfb5889af9d921d00..3b031662e75b6b9e8c201c2bf3a7a1df
            const internalParams = {
              ...params,
              sdkMetadata: {
-@@ -83,7 +84,8 @@ function createIntegration() {
-                 ...buildEnvVarFromOption(domain, "PUBLIC_CLERK_DOMAIN"),
-                 ...buildEnvVarFromOption(clerkJSUrl, "PUBLIC_CLERK_JS_URL"),
-                 ...buildEnvVarFromOption(clerkJSVariant, "PUBLIC_CLERK_JS_VARIANT"),
--                ...buildEnvVarFromOption(clerkJSVersion, "PUBLIC_CLERK_JS_VERSION")
-+                ...buildEnvVarFromOption(clerkJSVersion, "PUBLIC_CLERK_JS_VERSION"),
-+                "import.meta.env.IS_NETLIFY": JSON.stringify(process.env.NETLIFY !== undefined)
-               },
-               ssr: {
-                 external: ["node:async_hooks"]
-@@ -112,6 +114,17 @@ function createIntegration() {
+@@ -112,6 +113,17 @@ function createIntegration() {
              ${command === "dev" ? `console.log("${name}","Initialize Clerk: page")` : ""}
              import { runInjectionScript, swapDocument } from "${buildImportPath}";
  
@@ -59,7 +29,7 @@ index ea65fa6e50c26e32f0def7adfb5889af9d921d00..3b031662e75b6b9e8c201c2bf3a7a1df
              // Importing it directly from astro:transitions/client breaks custom client-side routing
              // even when View Transitions is disabled.
 diff --git a/dist/server/index.js b/dist/server/index.js
-index f65760365c60f46a00bb0949ff8fbaf0e14536db..109c30204e08af3b2b99e73f567a97c55be43203 100644
+index f65760365c60f46a00bb0949ff8fbaf0e14536db..6c07cfbcfcc1e8d52ac618e5d8af8c640ad44aff 100644
 --- a/dist/server/index.js
 +++ b/dist/server/index.js
 @@ -3,7 +3,7 @@ import { verifyToken, createClerkClient as createClerkClient2 } from "@clerk/bac
@@ -76,7 +46,7 @@ index f65760365c60f46a00bb0949ff8fbaf0e14536db..109c30204e08af3b2b99e73f567a97c5
  };
  
 +function handleNetlifyCacheInDevInstance(locationHeader, requestState) {
-+  if (import.meta.env.IS_NETLIFY && isDevelopmentFromPublishableKey(requestState.publishableKey)) {
++  if (import.meta.env.NETLIFY && isDevelopmentFromPublishableKey(requestState.publishableKey)) {
 +    const hasHandshakeQueryParam = locationHeader.includes('__clerk_handshake');
 +    if (!hasHandshakeQueryParam) {
 +      const url = new URL(locationHeader);
