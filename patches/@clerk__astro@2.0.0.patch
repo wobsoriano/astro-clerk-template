@@ -21,7 +21,7 @@ index ea65fa6e50c26e32f0def7adfb5889af9d921d00..dbd0dd5c6c49af436d40ef658624690e
              // Importing it directly from astro:transitions/client breaks custom client-side routing
              // even when View Transitions is disabled.
 diff --git a/dist/server/index.js b/dist/server/index.js
-index f65760365c60f46a00bb0949ff8fbaf0e14536db..2195aa063941ac2f9890df2a4fee949f1692c130 100644
+index f65760365c60f46a00bb0949ff8fbaf0e14536db..93b9683cd9567b93bce946ef984036fba60f507b 100644
 --- a/dist/server/index.js
 +++ b/dist/server/index.js
 @@ -3,7 +3,7 @@ import { verifyToken, createClerkClient as createClerkClient2 } from "@clerk/bac
@@ -33,14 +33,16 @@ index f65760365c60f46a00bb0949ff8fbaf0e14536db..2195aa063941ac2f9890df2a4fee949f
  import { isHttpOrHttps } from "@clerk/shared/proxy";
  import { eventMethodCalled } from "@clerk/shared/telemetry";
  import { handleValueOrFn } from "@clerk/shared/utils";
-@@ -177,6 +177,19 @@ var serverRedirectWithAuth = (context, clerkRequest, res, opts) => {
+@@ -177,6 +177,21 @@ var serverRedirectWithAuth = (context, clerkRequest, res, opts) => {
    return res;
  };
  
-+const isNetlifyBuild = process.env.PLATFORM === 'netlify';
++function isNetlifyBuild() {
++  return process.env.NETLIFY;
++}
 +
 +function handleNetlifyCacheInDevInstance(locationHeader, requestState) {
-+  if (isNetlifyBuild && isDevelopmentFromPublishableKey(requestState.publishableKey)) {
++  if (isNetlifyBuild() && isDevelopmentFromPublishableKey(requestState.publishableKey)) {
 +    const hasHandshakeQueryParam = locationHeader.includes('__clerk_handshake');
 +    if (!hasHandshakeQueryParam) {
 +      const url = new URL(locationHeader);
@@ -53,7 +55,7 @@ index f65760365c60f46a00bb0949ff8fbaf0e14536db..2195aa063941ac2f9890df2a4fee949f
  // src/server/clerk-middleware.ts
  var CONTROL_FLOW_ERROR = {
    REDIRECT_TO_SIGN_IN: "CLERK_PROTECT_REDIRECT_TO_SIGN_IN"
-@@ -199,8 +212,11 @@ var clerkMiddleware = (...args) => {
+@@ -199,8 +214,11 @@ var clerkMiddleware = (...args) => {
        clerkRequest,
        createAuthenticateRequestOptions(clerkRequest, options, context)
      );
