@@ -1,3 +1,19 @@
+diff --git a/components/interactive/SignIn.astro b/components/interactive/SignIn.astro
+index e4e2ab869f8106c9d86cbfeb380d3621c47cf391..7e26bdd07c191d85b43329a0ce1df76d74bb94dc 100644
+--- a/components/interactive/SignIn.astro
++++ b/components/interactive/SignIn.astro
+@@ -3,6 +3,11 @@ import type { SignInProps } from "@clerk/types";
+ type Props = SignInProps
+ 
+ import InternalUIComponentRenderer from './InternalUIComponentRenderer.astro'
++
++const isNetlify = import.meta.env.IS_NETLIFY;
+ ---
+ 
++<div>IS NETLIFY CLIENT {import.meta.env.IS_NETLIFY}</div>
++<div>IS NETLIFY SERVER {isNetlify}</div>
++<br />
+ <InternalUIComponentRenderer {...Astro.props} component="sign-in" />
 diff --git a/dist/index.js b/dist/index.js
 index ea65fa6e50c26e32f0def7adfb5889af9d921d00..3b031662e75b6b9e8c201c2bf3a7a1df684a33c8 100644
 --- a/dist/index.js
