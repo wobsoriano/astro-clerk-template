@@ -21,7 +21,7 @@ index ea65fa6e50c26e32f0def7adfb5889af9d921d00..dbd0dd5c6c49af436d40ef658624690e
              // Importing it directly from astro:transitions/client breaks custom client-side routing
              // even when View Transitions is disabled.
 diff --git a/dist/server/index.js b/dist/server/index.js
-index f65760365c60f46a00bb0949ff8fbaf0e14536db..93b9683cd9567b93bce946ef984036fba60f507b 100644
+index f65760365c60f46a00bb0949ff8fbaf0e14536db..dbb4f3a4c60557901b4af9d87f4c9519d3ee0012 100644
 --- a/dist/server/index.js
 +++ b/dist/server/index.js
 @@ -3,7 +3,7 @@ import { verifyToken, createClerkClient as createClerkClient2 } from "@clerk/bac
@@ -38,7 +38,7 @@ index f65760365c60f46a00bb0949ff8fbaf0e14536db..93b9683cd9567b93bce946ef984036fb
  };
  
 +function isNetlifyBuild() {
-+  return process.env.NETLIFY;
++  return process.env.NETLIFY
 +}
 +
 +function handleNetlifyCacheInDevInstance(locationHeader, requestState) {
