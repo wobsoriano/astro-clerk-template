@@ -21,7 +21,7 @@ index ea65fa6e50c26e32f0def7adfb5889af9d921d00..dbd0dd5c6c49af436d40ef658624690e
              // Importing it directly from astro:transitions/client breaks custom client-side routing
              // even when View Transitions is disabled.
 diff --git a/dist/server/index.js b/dist/server/index.js
-index f65760365c60f46a00bb0949ff8fbaf0e14536db..cbdee5b6941e176cc5564ca17fc5083942b25158 100644
+index f65760365c60f46a00bb0949ff8fbaf0e14536db..23b09203dedeb05799e24dc15d5559b8c79add31 100644
 --- a/dist/server/index.js
 +++ b/dist/server/index.js
 @@ -3,7 +3,7 @@ import { verifyToken, createClerkClient as createClerkClient2 } from "@clerk/bac
@@ -38,7 +38,7 @@ index f65760365c60f46a00bb0949ff8fbaf0e14536db..cbdee5b6941e176cc5564ca17fc50839
  };
  
 +function handleNetlifyCacheInDevInstance(locationHeader, requestState) {
-+  if (process.env.NETLIFY && isDevelopmentFromPublishableKey(requestState.publishableKey)) {
++  if (isDevelopmentFromPublishableKey(requestState.publishableKey)) {
 +    const hasHandshakeQueryParam = locationHeader.includes('__clerk_handshake');
 +    if (!hasHandshakeQueryParam) {
 +      const url = new URL(locationHeader);
