@@ -57,7 +57,7 @@ export default defineConfig({
         optional: true,
       }),
     },
-  }
+  },
 });
 
 function getAdapter() {
@@ -70,7 +70,7 @@ function getAdapter() {
       return netlify();
     case "cloudflare":
       return cloudflare({
-        imageService: "passthrough"
+        imageService: "passthrough",
       });
     default:
       return node({ mode: "standalone" });
