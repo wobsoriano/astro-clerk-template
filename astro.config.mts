@@ -50,22 +50,6 @@ export default defineConfig({
   adapter: getAdapter(),
   env: {
     schema: {
-      PUBLIC_CLERK_PUBLISHABLE_KEY: envField.string({
-        context: "client",
-        access: "public",
-      }),
-      PUBLIC_CLERK_SIGN_IN_URL: envField.string({
-        context: "client",
-        access: "public",
-      }),
-      PUBLIC_CLERK_SIGN_UP_URL: envField.string({
-        context: "client",
-        access: "public",
-      }),
-      CLERK_SECRET_KEY: envField.string({
-        context: "server",
-        access: "secret",
-      }),
       PLATFORM: envField.enum({
         context: "server",
         access: "public",
@@ -73,7 +57,6 @@ export default defineConfig({
         optional: true,
       }),
     },
-    validateSecrets: true,
   }
 });
 
@@ -87,10 +70,7 @@ function getAdapter() {
       return netlify();
     case "cloudflare":
       return cloudflare({
-        imageService: "passthrough",
-        // platformProxy: {
-        //   enabled: true,
-        // },
+        imageService: "passthrough"
       });
     default:
       return node({ mode: "standalone" });
