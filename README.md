@@ -15,9 +15,32 @@ This template allows you to get started with Clerk and Astro in a matter of minu
 
 A hosted demo of this example is available at:
 
-- [Vercel](https://astro-clerk-template.vercel.app/)
-- [Cloudflare Pages](https://astro-clerk-template.pages.dev)
-- [Netlify](https://astro-clerk-template.netlify.app)
+<details>
+<summary>Vercel</summary>
+
+Demo: https://astro-clerk-template.vercel.app/
+
+1. Set the `PLATFORM` env var to "netlify"
+2. Add your key to the Vercel environment variables
+</details>
+
+<details>
+<summary>Cloudflare Pages</summary>
+
+Demo: https://astro-clerk-template.pages.dev
+
+1. Update the `wrangler.toml` file with your own Publishable key
+2. Run `pnpm dlx wrangler pages secret put CLERK_SECRET_KEY` to add your secret key
+</details>
+
+<details>
+<summary>Netlify</summary>
+
+Demo: https://astro-clerk-template.netlify.app
+
+1. Set the `PLATFORM` env var to "netlify"
+2. Add your key to the Netlify environment variables
+</details>
 
 ## Running the template
 
