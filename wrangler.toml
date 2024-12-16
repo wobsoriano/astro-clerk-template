@@ -5,3 +5,6 @@ compatibility_date = "2024-11-11"
 
 [vars]
 PLATFORM = "cloudflare"
+PUBLIC_CLERK_PUBLISHABLE_KEY = "pk_test_dXByaWdodC1wb2xsaXdvZy05MS5jbGVyay5hY2NvdW50cy5kZXYk"
+PUBLIC_CLERK_SIGN_IN_URL = "/sign-in"
+PUBLIC_CLERK_SIGN_UP_URL = "/sign-up"
