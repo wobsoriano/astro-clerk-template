@@ -48,33 +48,14 @@ export default defineConfig({
   ],
   output: "server",
   adapter: getAdapter(),
-  experimental: {
-    env: {
-      schema: {
-        PUBLIC_CLERK_PUBLISHABLE_KEY: envField.string({
-          context: "client",
-          access: "public",
-        }),
-        PUBLIC_CLERK_SIGN_IN_URL: envField.string({
-          context: "client",
-          access: "public",
-        }),
-        PUBLIC_CLERK_SIGN_UP_URL: envField.string({
-          context: "client",
-          access: "public",
-        }),
-        CLERK_SECRET_KEY: envField.string({
-          context: "server",
-          access: "secret",
-        }),
-        PLATFORM: envField.enum({
-          context: "server",
-          access: "public",
-          values: ["vercel", "netlify", "cloudflare"],
-          optional: true,
-        }),
-      },
-      validateSecrets: true,
+  env: {
+    schema: {
+      PLATFORM: envField.enum({
+        context: "server",
+        access: "public",
+        values: ["vercel", "netlify", "cloudflare"],
+        optional: true,
+      }),
     },
   },
 });
@@ -90,9 +71,6 @@ function getAdapter() {
     case "cloudflare":
       return cloudflare({
         imageService: "passthrough",
-        platformProxy: {
-          enabled: true,
-        },
       });
     default:
       return node({ mode: "standalone" });
